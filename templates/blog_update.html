@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+<br>
+<p style="padding-left:20px;">
+<a class="bg-green-500 text-white font-bold py-2 px-4">Title</a>
+<br>
+<br>
+{{form.title}}
+<br>
+<br>
+<br>
+<a class="bg-green-500 text-white font-bold py-2 px-4">Content</a>
+<br>
+<br>
+{{form.content}}
+<a class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:right"><button type="submit">Update</button></a>
+</form>
+</p>
+{% endblock content %}
