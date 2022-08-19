@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<p style="padding-left:20px;">
+<a class="bg-green-500 text-white font-bold py-2 px-20">Blog list</a> 
+<br>
+<br>
+{%for post in posts%}
+<a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{% url 'blog:detail' post.id %}">{{post.title}}</a> 
+<a class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:right" href="{% url 'blog:update' post.id %}">Update</a>
+<a class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:right" href="{% url 'blog:delete' post.id %}">Delete</a>
+<br>
+<br>
+{% endfor %}
+<br>
+<p style="padding-left:20px;">
+<a class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:right" href="{% url 'blog:create' %}">Create</a>
+</p>
+{% endblock content %}
